@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <form name="form1">
+      <label>M1 Marks:<input type="number" required><span class="required">*</span></label>
+      <label>M2 Marks:<input type="number" required><span class="required">*</span></label>
+      <button class="submit">Submit</button>
+      <div class="output"></div>
+   </form>
+   <script>
+      const form = document.querySelector('form');
+      const inputs = form.querySelectorAll('input[type="number"]');
+      const output = document.querySelector('.output');
+      form.addEventListener('submit', handleSubmit, false);
+      function handleSubmit(e) {
+         e.preventDefault();
+         let total = 0;
+         for (let i = 0; i < inputs.length; i++) {
+            total += Number(inputs[i].value);
+         }
+         const avg = total / inputs.length;
+         output.textContent = `Total: ${total}, Avg: ${avg}`;
+      }
+   </script>
+</body>
+</html>

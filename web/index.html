@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find King</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="script" type="Javascript" href="/js/script.js">
+    <!-- <script>
+    //     function getInputValue() {
+    //       // Selecting the input element and get its value 
+    //       let inputVal = document.getElementById("inputId").value;
+    //       // Displaying the value
+    //       var depCash=inputVal;
+    //       alert("Your Deposite Cash is :$"+depCash);
+    //       var curBal=2*depCash;
+    //       alert("& Your Current Balance got doubled to:$"+curBal);
+    //     }
+    //   </script> -->
+</head>
+<body>
+    <header>I am the King. Find Me.</header>
+    <h3>Find me exactly and I will double your cash.</h3>
+    <h3>If failed you will suffer 25% loss of your Current Balance.</h3>
+        <form name="FindKing">
+            <label>Enter Cash Amount(USD):</label>
+            <input type="number" id="inputId" placeholder="Amount in US Dollars">
+            <button type="submit" onclick="getInputValue();">Deposit Cash</button> 
+            <!-- onclick="getInputValue();">Deposit Cash</button> -->
+            <div class="output"></div>
+        </form>
+    <script>
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input[type="number"]');
+        const output = document.querySelector('.output');
+        form.addEventListener('submit', handleSubmit, false);
+        function handleSubmit(e) {
+           e.preventDefault();
+           let total = 0;
+           for (let i = 0; i < inputs.length; i++) {
+            total += Number(inputs[i].value);
+         }
+        // const curBal = total + (2*inputs);
+        // output.textContent = `Total Deposit Amount:$ ${total}, and Current Balance:$ ${2*total}`;
+        output.textContent = `Total Deposit Amount:Rs. ${total*78}, and Current Balance:Rs. ${2*78*total}`;
+        }
+     </script>    
+     <!-- <footer>HTML CSS and Javascript based Game.</footer> -->
+
+</body>
+</html>
